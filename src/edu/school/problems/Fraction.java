@@ -61,6 +61,10 @@ public class Fraction {
 	public Fraction add(Fraction f) {
 		Fraction fCopy = new Fraction(f.getNumerator(), f.getDenominator());
 		Fraction addResult = new Fraction(numerator, denominator);
+		
+		fCopy.simplify();
+		addResult.simplify();
+		
 		int fDenominatorCopy = f.getDenominator();
 		int resultDenominatorCopy = addResult.getDenominator();
 		fCopy.denominator *= resultDenominatorCopy;
@@ -76,6 +80,10 @@ public class Fraction {
 	public Fraction substract(Fraction f) {
 		Fraction fCopy = new Fraction(f.getNumerator(), f.getDenominator());
 		Fraction substractResult = new Fraction(numerator, denominator);
+		
+		fCopy.simplify();
+		substractResult.simplify();
+		
 		int fDenominatorCopy = f.getDenominator();
 		int resultDenominatorCopy = substractResult.getDenominator();
 		fCopy.denominator *= resultDenominatorCopy;
@@ -91,6 +99,10 @@ public class Fraction {
 	public Fraction multiply(Fraction f) {
 		Fraction fCopy = new Fraction(f.getNumerator(), f.denominator);
 		Fraction multiplyResult = new Fraction(numerator, denominator);
+		
+		fCopy.simplify();
+		multiplyResult.simplify();
+		
 		multiplyResult.numerator *= fCopy.getNumerator();
 		multiplyResult.denominator *= fCopy.getDenominator();
 		
@@ -101,6 +113,10 @@ public class Fraction {
 	public Fraction divide(Fraction f) {
 		Fraction fCopy = new Fraction(f.getNumerator(), f.denominator);
 		Fraction divideResult = new Fraction(numerator, denominator);
+		
+		fCopy.simplify();
+		divideResult.simplify();
+		
 		divideResult.numerator *= fCopy.getDenominator();
 		divideResult.denominator *= fCopy.getNumerator();
 		
